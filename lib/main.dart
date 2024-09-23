@@ -1,4 +1,5 @@
 import 'package:discover_recipes/screens/categories_meals_screen.dart';
+import 'package:discover_recipes/screens/meal_details_screen.dart';
 import 'package:discover_recipes/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -44,6 +45,12 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.HOME: (context) => const CategoriesScreen(),
         AppRoutes.CATEGORIES_MEALS: (context) => const CategoriesMealsScreen(),
+        AppRoutes.MEAL_DETAILS: (context) => const MealDetailsScreen(),
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (_) {
+          return const CategoriesScreen();
+        });
       },
     );
   }
